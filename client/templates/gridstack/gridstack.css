@@ -316,3 +316,13 @@
         height: auto !important;
     }
 }
+
+.grid-stack-item {
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+}
+
+.grid-stack-item-content {
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+}
