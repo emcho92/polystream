@@ -9,3 +9,7 @@ autopublish
 insecure
 twbs:bootstrap
 underscore
+jquery
+tarzak:gridstackjs
+mizzao:jquery-ui
+fortawesome:fontawesome

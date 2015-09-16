@@ -1,10 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title></title>
+    <title>Polystream</title>
 </head>
 <body>
-
+    <div class="container">
+        <header class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">Polystream</a>
+            </div>
+        </header>
+    </div>
+    {{> gridstack}}
 </body>
-</html>
+
+<template name="gridstack">
+    <div>
+        <div class="grid-stack">
+            {{#each tile}}
+                {{> gridstackItem}}
+            {{/each}}
+        </div>
+    </div>
+</template>
+<template name="gridstackItem">
+    <div class="grid-stack-item"
+         data-gs-x={{x}} data-gs-y={{y}}
+         data-gs-width={{width}} data-gs-height={{height}}
+         data-panel-id={{_id}} data-content-id={{contentId}}>
+        <div class="grid-stack-item-content">
+            {{url}}
+            <form action="">
+                <input class="form-control" name="url" placeholder="Twitch stream"/>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</template>
