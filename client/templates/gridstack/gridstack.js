@@ -15,7 +15,6 @@ Template.gridstack.rendered = function () {
                 y:attributes.gsY,height:attributes.gsHeight, width:attributes.gsWidth}});
 
             $('.grid-stack-item-content').each(function(index) {
-                console.log($(this))
                 $(this).children()[0].width = $(this)[0].offsetWidth;
                 $(this).children()[0].height = $(this)[0].offsetHeight - 30;
             });
@@ -36,9 +35,7 @@ Template.gridstackItem.rendered = function () {
 Template.gridstackItem.events({
     'click #removeStream': function() {
         var grid = $('.grid-stack').data('gridstack');
-        console.log(grid);
         grid.remove_widget($("div[data-panel-id=" + this._id + "]"));
-        console.log(grid);
         TempGridTiles.remove(this._id);
     }
 });
