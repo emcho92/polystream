@@ -2,13 +2,21 @@
     <title>Polystream</title>
 </head>
 <body>
-    <div class="container">
+
         <header class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
                 <a href="/" class="navbar-brand">Polystream</a>
             </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Add stream</a>
+                    </li>
+                </ul>
+                {{> addStream}}
+            </div>
         </header>
-    </div>
+
     {{> gridstack}}
 </body>
 
@@ -27,7 +35,8 @@
          data-gs-width={{width}} data-gs-height={{height}}
          data-panel-id={{_id}} data-content-id={{contentId}}>
         <div class="grid-stack-item-content">
-            <iframe src="http://www.twitch.tv/lirik/embed" frameborder="0" scrolling="no" height="378" width="620"></iframe><a href="http://www.twitch.tv/lirik?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px;text-decoration:underline;"></a>
+            <iframe src="http://www.twitch.tv/lirik/embed" frameborder="0" scrolling="no" height="378" width="620"></iframe>
+            <a id="removeStream" href="#" style="padding-left: 10px; color: gray"><i class="fa fa-times"></i></a>
         </div>
     </div>
 </template>
