@@ -19,3 +19,4 @@ accounts-password
 percolate:synced-cron
 http
 udondan:bulk-collection-update
+meteorhacks:search-source

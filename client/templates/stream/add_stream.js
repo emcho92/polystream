@@ -11,5 +11,9 @@ Template.addStream.events({
         };
 
         TempGridTiles.insert(stream);
-    }
+    },
+    "keyup #search-box": _.throttle(function(e) {
+        var text = $(e.target).val().trim();
+        StreamSearch.search(text);
+    }, 200)
 });

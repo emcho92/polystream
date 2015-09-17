@@ -2,7 +2,7 @@ Meteor.startup(function(){
     SyncedCron.add({
         name: 'Twitch Cron to fetch streams',
         schedule: function(parser) {
-            return parser.text('every 5 minute');
+            return parser.text('every 5 minutes');
         },
         job: function() {
             var streamNames = [];

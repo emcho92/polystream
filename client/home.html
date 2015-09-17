@@ -7,18 +7,13 @@
             <a href="/" class="navbar-brand">Polystream</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="#">Add stream</a>
-                </li>
-            </ul>
             {{> addStream}}
+            {{> searchResult}}
             <ul class="nav navbar-nav navbar-right">
                 <li><a>{{> loginButtons}}</a></li>
             </ul>
         </div>
     </header>
-
     {{> gridstack}}
 
 </body>
@@ -42,4 +37,14 @@
             <a id="removeStream" href="#" style="padding-left: 10px; color: gray"><i class="fa fa-times"></i></a>
         </div>
     </div>
+</template>
+
+<template name="searchResult">
+    <ul class="nav navbar-nav navbar-left list-inline">
+            {{#each getStreams}}
+                <li>
+                    <a id="searchResultItem" name="url">{{{name}}}</a>
+                </li>
+            {{/each}}
+    </ul>
 </template>
