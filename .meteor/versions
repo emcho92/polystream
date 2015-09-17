@@ -59,6 +59,7 @@ tarzak:gridstackjs@0.2.3
 templating@1.1.1
 tracker@1.0.7
 twbs:bootstrap@3.3.5
+udondan:bulk-collection-update@0.2.0
 ui@1.0.6
 underscore@1.0.3
 url@1.0.4
