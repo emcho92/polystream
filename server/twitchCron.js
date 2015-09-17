@@ -2,7 +2,7 @@ Meteor.startup(function(){
     SyncedCron.add({
         name: 'Twitch Cron to fetch streams',
         schedule: function(parser) {
-            return parser.text('every 5 minutes');
+            return parser.text('every 5 mins');
         },
         job: function() {
             var streamNames = [];
@@ -11,9 +11,7 @@ Meteor.startup(function(){
                 if (response !== null || response !== undefined){
                     var offset = 0;
 
-                    for (var i = 0; i < (response.data.channels / 100); i++) {
-                        offset = offset + 100;
-
+                    for (var i = 0; i < 10; i++) {
                         Meteor.call("TwitchAPIStreams", offset, function(error, response) {
                             if (response !== null || response !== undefined){
                                 for (var i = 0; i < response.data.streams.length; i++) {
@@ -27,6 +25,7 @@ Meteor.startup(function(){
                             }
                         });
 
+                        offset = offset + 100;
                     }
 
                     bulkCollectionUpdate(TwitchStreams, streamNames, {
